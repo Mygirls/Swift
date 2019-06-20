@@ -1,0 +1,58 @@
+
+首先：了解一下 URL Loading System
+结构目录：如图所示：URLLoadingSystem.png
+
+URL Loading System
+    Interact with URLs and communicate with servers using standard Internet protocols.
+    与URL交互，并使用标准的Internet协议与服务器通信。
+
+概述：
+    1）URL加载系统使用标准协议（如https或您创建的自定义协议）提供对URL标识的资源的访问。 加载是异步执行的，因此您的应用程序可以保持响应并在到达时处理传入的数据或错误。
+    2）您可以使用 NSURLSession 实例创建一个或多个 NSURLSessionTask 实例，这些实例可以获取数据并将数据返回到你的应用程序，下载文件或将数据和文件上传到远程位置。 要配置会话（To configure a session），请使用 NSURLSessionConfiguration 对象，该对象控制如何使用缓存和cookie或是否允许蜂窝网络上的连接等行为。
+    3）您可以重复使用一个会话（session）来创建任务。 例如，Web浏览器可能具有用于常规和私人浏览使用的单独会话，其中私有会话不缓存其数据。
+
+    4）每个会话都与一个委托（delegate）相关联，以接收定期更新（或错误）。 默认委托调用您提供的完成处理程序块; 如果您选择提供自己的自定义委托，则不会调用此块。
+    5）您可以将会话配置为在后台运行，以便在应用程序暂停时，系统可以代表它下载数据并唤醒应用程序以提供结果。
+
+NSURLProtocol是如此地强大，可以拦截应用内几乎所有的网络请求（除了WKWebView），并可以修改请求头，返回client任意自定义的数据等等，据说很多做网络缓存都是利用这个类的
+
+
+
+NSURLProtocol:
+
+    1)NSURLProtocol对象处理特定于协议的URL数据的加载。 NSURLProtocol类本身是一个抽象类，它提供了使用特定URLscheme 处理URL的基础结构。 您可以为应用支持的任何自定义协议或URLscheme创建子类。
+    2)应用程序永远不需要直接实例化NSURLProtocol子类。 下载开始时，系统会创建相应的协议对象来处理相应的URL请求。 您所要做的就是定义协议类并在应用程序启动时调用registerClass：类方法，以便系统知道您的协议。
+    3)
+      可以使用NSURLProtocol的类方法：
+        + (id)propertyForKey:(NSString *)key inRequest:(NSURLRequest *)request;
+        + (void)setProperty:(id)value forKey:(NSString *)key inRequest:(NSMutableURLRequest *)request;
+
+      来存储和检索特定于协议的请求数据。
+
+总而言之：在每一个 HTTP 请求开始时，URL 加载系统创建一个合适的 NSURLProtocol 对象处理对应的 URL 请求，而我们需要做的就是写一个继承自 NSURLProtocol 的类，并通过 - registerClass: 方法注册我们的协议类，然后 URL 加载系统就会在请求发出时使用我们创建的协议对象对该请求进行处理。（从而到达拦截Http的目的）
+
+参考博客：
+https://www.jianshu.com/p/c059492513ae
+https://www.jianshu.com/p/f9ecdb697fd9
+
+
+
+
+补充：
+内联函数：
+    1）引入内联函数是为了解决函数调用效率的问题
+    2）由于函数之间的调用，会从一个内存地址调到另外一个内存地址，当函数调用完毕之后还会返回原来函数执行的地址。函数调用会有一定的时间开销，引入内联函数就是为了解决这一问题。
+
+
+
+
+
+
+
+
+
+
+
+
+
+

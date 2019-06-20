@@ -1,0 +1,39 @@
+# Podfile
+use_frameworks!
+
+target 'RxSwiftManager' do
+
+# 用法文档 https://www.jianshu.com/p/f61a5a988590
+pod 'RxSwift',    '~> 4.0'
+pod 'RxCocoa',    '~> 4.0'
+
+# pod 'MToolKit', '~> 0.0.1'
+
+end
+
+# RxTests 和 RxBlocking 将在单元/集成测试中起到重要作用
+target 'RxSwiftManagerTests' do
+
+pod 'RxBlocking', '~> 4.0'
+pod 'RxTest',     '~> 4.0'
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

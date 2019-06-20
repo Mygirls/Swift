@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FourthViewController" customModule="RxSwiftManager" customModuleProvider="target">
+            <connections>
+                <outlet property="label" destination="O5u-Nw-kao" id="akh-xw-FbF"/>
+                <outlet property="view" destination="KaJ-EX-9sv" id="zwW-RR-aBp"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="KaJ-EX-9sv">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5u-Nw-kao">
+                    <rect key="frame" x="63" y="143" width="187.5" height="47"/>
+                    <color key="backgroundColor" red="0.8553880766270856" green="1" blue="0.79672511655661282" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="9zj-uu-82d"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.90172146510138962" blue="0.89142376491505937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="O5u-Nw-kao" firstAttribute="top" secondItem="wZL-OO-XCH" secondAttribute="top" constant="127" id="838-KK-HgI"/>
+                <constraint firstItem="O5u-Nw-kao" firstAttribute="leading" secondItem="KaJ-EX-9sv" secondAttribute="trailing" multiplier="0.25" id="GwN-4S-qVi"/>
+                <constraint firstItem="O5u-Nw-kao" firstAttribute="width" secondItem="KaJ-EX-9sv" secondAttribute="width" multiplier="0.5" id="ZIi-F7-2OC"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="wZL-OO-XCH"/>
+            <point key="canvasLocation" x="-272.5" y="-214.5"/>
+        </view>
+    </objects>
+</document>
